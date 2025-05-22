@@ -1,0 +1,1 @@
+# go-paloalto-version
