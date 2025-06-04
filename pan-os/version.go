@@ -26,17 +26,17 @@ func NewVersion(ver string) (Version, error) {
 
 	major, err := strconv.Atoi(ss[0])
 	if err != nil {
-		return Version{}, fmt.Errorf("failed to parse major version. err: %w", err)
+		return Version{}, fmt.Errorf("parse major version. err: %w", err)
 	}
 
 	minor, err := strconv.Atoi(ss[1])
 	if err != nil {
-		return Version{}, fmt.Errorf("failed to parse minor version. err: %w", err)
+		return Version{}, fmt.Errorf("parse minor version. err: %w", err)
 	}
 
 	maintenance, err := strconv.Atoi(ss[2])
 	if err != nil {
-		return Version{}, fmt.Errorf("failed to parse maintenance version. err: %w", err)
+		return Version{}, fmt.Errorf("parse maintenance version. err: %w", err)
 	}
 
 	v := Version{
@@ -52,7 +52,7 @@ func NewVersion(ver string) (Version, error) {
 
 		hotfix, err := strconv.Atoi(strings.TrimPrefix(rhs, "h"))
 		if err != nil {
-			return Version{}, fmt.Errorf("failed to parse hotfix version. err: %w", err)
+			return Version{}, fmt.Errorf("parse hotfix version. err: %w", err)
 		}
 
 		v.Hotfix = &hotfix
